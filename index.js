@@ -78,10 +78,15 @@ let engine = (id, classes, message) => {
 let isPassword=(id, classes)=>{
    
     const password = id.value.trim();
-
+    
+    console.log(password, isPasswordSecure(password))
     if(password === '')
     {
         engine(id,classes,"Password cannot be blank");
+        id.style.border = "2px solid red";
+
+        failureIcon[classes].style.opacity = "1";
+        successIcon[classes].style.opacity = "0";
     }
     else if (!isPasswordSecure(password)) {
         errorMsg[classes].innerText='Password must has at least 8 characters that include at least 1 lowercase character, 1 uppercase characters, 1 number, and 1 special character in (!@#$%^&*)';
@@ -98,60 +103,68 @@ let isPassword=(id, classes)=>{
         failureIcon[classes].style.opacity = "0";
         successIcon[classes].style.opacity = "1";
     }
+    console.log(password)
        
 }
 
 let checkConfirmPassword = (id1, id2, classes) => {
-    
     const password = id1.value.trim();
     const confirmPassword = id2.value.trim();
 
+    console.log(confirmPassword === '')
+
     if(confirmPassword === '')
     {
+        console.log("gvh");
         engine(id2,classes,"Password cannot be blank");
+
+        id2.style.border = "2px solid red";
+        failureIcon[classes].style.opacity = "1";
+        successIcon[classes].style.opacity = "0";
     }
-    else if (password !== confirmPassword) {
+    else if (password != confirmPassword) {
         errorMsg[classes].innerText='Confirm password does not match';
+
+        id2.style.border = "2px solid red";
+        failureIcon[classes].style.opacity = "1";
+        successIcon[classes].style.opacity = "0";
     } else {
+        console.log("gvhxx");
         errorMsg[classes].innerText ="";
+        id2.style.border = "2px solid green";
+
+        failureIcon[classes].style.opacity = "0";
+        successIcon[classes].style.opacity = "1";
     }
 };
 
 
 let checkbox = (input, classes, message)=>{
-    var valid = false;
-    if( !input.value.checked ){
-
-        var x =true;
-        console.log(x)
-        errorMsg[classes].innerText ="";
-        input.style.border = "2px solid green";
-
-        failureIcon[classes].style.opacity = "0";
-        successIcon[classes].style.opacity = "1";
-        
-    }
-    else{
-        var y=false;
-        console.log(y)
+    if(input.checked == false ){
         errorMsg[classes].innerText = message;
         input.style.border = "2px solid red";
 
         failureIcon[classes].style.opacity = "1";
-        successIcon[classes].style.opacity = "0";
-        
+        successIcon[classes].style.opacity = "0";   
+    }
+    else{
+        errorMsg[classes].innerText ="";
+        input.style.border = "2px solid green";
+
+        failureIcon[classes].style.opacity = "0";
+        successIcon[classes].style.opacity = "1";   
     }
 }
 
 let isContact = (number,classes)=>{
 
-    console.log(number.value);
+    console.log(number.value.length);
     if(number.value.trim() === ""){
 
         engine(number,classes,"Phone number can not be blank");
 
     }
-    else if(number.value.length < 9 || number.value.length>9){
+    else if(number.value.length === 10 ){
         
         errorMsg[classes].innerText = "Enter valid phone number";
         number.style.border = "2px solid red";
@@ -159,12 +172,9 @@ let isContact = (number,classes)=>{
         failureIcon[classes].style.opacity = "1";
         successIcon[classes].style.opacity = "0";
     }
-    else{
-        
+    else{       
         errorMsg[classes].innerText ="";
-
         number.style.border = "2px solid green";
-
         failureIcon[classes].style.opacity = "0";
         successIcon[classes].style.opacity = "1";
     }
@@ -182,17 +192,14 @@ let isRadioButtonChecked = (x, classes) => {
     }
     else{
         errorMsg[classes].innerText = "Select the gender";
-
-       
+     
         failureIcon[classes].style.opacity = "1";
-        successIcon[classes].style.opacity = "0";
-       
+        successIcon[classes].style.opacity = "0";   
     }
 }
 
 let isCountry = (select, classes) =>{
-    var selectOption = document.getElementById('option-select');
-    console.log(select.value);
+    // var selectOption = document.getElementById('option-select');
     if(select.value == "ca" || select.value=="us" || select.value == "uk" || select.value == "in"){
 
         errorMsg[classes].innerText = "";
@@ -201,7 +208,6 @@ let isCountry = (select, classes) =>{
 
         failureIcon[classes].style.opacity = "0";
         successIcon[classes].style.opacity = "1";
-        //select.style.display = 'none';
     }
     else{
         errorMsg[classes].innerText ="Please select an option";
@@ -210,7 +216,6 @@ let isCountry = (select, classes) =>{
         failureIcon[classes].style.opacity = "1";
         successIcon[classes].style.opacity = "0";
     }
-
 }
 
 function myFunction(){
