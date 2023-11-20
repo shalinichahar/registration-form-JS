@@ -1,0 +1,192 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: sans-serif;
+    
+  }
+
+  .container{
+    width: 100%;
+    
+  }
+  form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 40px;
+  }
+
+  .title {
+    font-size: 25px;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+
+  label {
+    display: block;
+    margin-bottom: 5px;
+  }
+
+  form div input,textarea,select {
+    width: 100%;
+    height: 40px;
+    border-radius: 8px;
+    outline: none;
+    border: 2px solid #c4c4c4;
+    padding: 0 30px;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  form div {
+    position: relative;
+    margin-bottom: 15px;
+  }
+  
+  input:focus {
+    border: 2px solid #f2796e;
+  }
+  textarea:focus{
+    border: 2px solid #f2796e;
+  }
+
+  form div i {
+    position: absolute;
+    padding: 10px;
+  }
+  
+.failure-icon,
+.error {
+  color: red;
+}
+
+.success-icon {
+  color: green;
+}
+
+.error {
+  font-size: 14.5px;
+  margin-top: 5px;
+}
+
+.success-icon,
+.failure-icon {
+  right: 0;
+  opacity: 0;
+}
+
+button {
+    margin-top: 15px;
+    width: 100%;
+    height: 45px;
+    background-color: #f2796e;
+    border: 2px solid #f2796e;
+    border-radius: 8px;
+    color: #fff;
+    font-size: 20px;
+    cursor: pointer;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    transition: all 0.1s ease;
+  }
+
+button:hover {
+    opacity: 0.8;
+}
+
+/* TABLE */
+
+table {
+    border-collapse: collapse;
+    width: auto;
+    padding: 10px;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+
+th{
+    height: 40px;
+}
+
+td{
+    text-align: centre;
+}
+
+table, td, th {
+    border: 1px solid black;
+    padding: 10px;
+    box-sizing: border-box;
+    width: 50%;
+    margin-bottom: 20px;
+    right: inherit;
+}
+
+.tr{
+    color: red;
+}
+caption{
+    font-size: 25px;
+    font: bold;
+    margin-bottom: 10px;
+
+}
+
+/* Validation */
+
+input[type="radio"] {
+    padding: 0;
+    width: 10%;
+    box-shadow: none;
+    border: none;
+    height: 30px;
+    margin-left: 20px;
+    margin-right: 10px;
+}
+
+p>label{
+  display: block;
+}
+
+fieldset {
+  width: 100%;
+  border: 1px solid #333;
+  box-sizing: border-box;
+}
+#male {
+    margin-left: 0;
+}  
+
+.style{
+    display: flex;
+    align-items: center;
+}
+i{
+  padding-left: 5px;
+}
+.style:focus {
+    border: 2px solid #f2796e;
+}
+#checkbox{
+    padding: 0;
+    width: 10%;
+    box-shadow: none;
+    border: none;
+    height: 30px;
+    margin-right: 10px;
+}
+
+/*input:invalid {
+  box-shadow: 0 0 5px 1px red;
+}
+
+input:focus:invalid {
+  box-shadow: none;
+}*/
+
+
+
