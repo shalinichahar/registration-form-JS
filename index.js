@@ -164,7 +164,7 @@ let isContact = (number,classes)=>{
         engine(number,classes,"Phone number can not be blank");
 
     }
-    else if(number.value.length === 10 ){
+    else if(number.value.length < 10 || number.value.length > 10 ){
         
         errorMsg[classes].innerText = "Enter valid phone number";
         number.style.border = "2px solid red";
