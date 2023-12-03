@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="/css/style.css">
     <link
         rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
@@ -14,143 +14,154 @@
 
 <body>
     <div class="container">
-        <form id="form" method="get" action="#">
-            <div class="title">Registration Form</div>
-            <div>
-                <label for="username">User Name</label>
-                <i class="fas fa-user"></i>            
-                <input
-                    type="text"
-                    name="username"
-                    id="username"
-                    placeholder=" Full Name "
-                    onkeyup="myFunction()"
-                />            
-                <i class="fas fa-exclamation-circle failure-icon"></i>
-                <i class="far fa-check-circle success-icon"></i>
-                <div class="error"></div>
-            </div>
-
-            <div>
-                <label for="email">Email</label>
-                <i class="far fa-envelope"></i>            
-                <input
-                    type="email"
-                    name="email"
-                    id="email"
-                    placeholder="abc@gmail.com"
-                    onkeyup="myFunction2()"
-                />             
-                <i class="fas fa-exclamation-circle failure-icon"></i>
-                <i class="far fa-check-circle success-icon"></i>              
-                <div class="error"></div>
-            </div>
-
-            <div>
-                <label for="password">Password</label>
-                <i class="fas fa-lock"></i>              
-                <input
-                    type="password"
-                    name="password"
-                    id="password"
-                    placeholder="Password here"
-                    onkeyup="myFunction3()"
-                />            
-                <i class="fas fa-exclamation-circle failure-icon"></i>
-                <i class="far fa-check-circle success-icon"></i>            
-                <div class="error"></div>
-            </div>
-
-            <div>
-                <label for="confirm_password">Confirm Password</label>
-                <i class="fas fa-lock"></i>
-                <input type="password"
-                        name="confirm_password"
-                        id="confirm_password"
-                        placeholder="Confirm password"
-                        onkeyup="myFunction4()"
-                />
-                <i class="fas fa-exclamation-circle failure-icon"></i>
-                <i class="far fa-check-circle success-icon"></i>               
-                <div class="error"></div>
-            </div>
-
-            <div>
-                <label for="address">Address</label>
-                <i class="fas fa-address-card"></i>
-                <textarea name="address" id="address" cols="40" rows="2" onkeyup="myFunction5()"></textarea>
-                <i class="fas fa-exclamation-circle failure-icon"></i>
-                <i class="far fa-check-circle success-icon"></i>               
-                <div class="error"></div>
-            </div>
-
-            <div> 
-                <label>Are you employed?</label>               
-                    <div class="style">
-                        <input  type="checkbox" id="checkbox" name="checkbox" onclick="myFunction6()" >
-                        <label for="checkbox">yes</label>
-                        <i class="fas fa-exclamation-circle failure-icon"></i>
-                        <i class="far fa-check-circle success-icon"></i>
-                    </div>              
-                <div class="error"></div>
-            </div>
-
-            <div>
-                <label for="phone_number">Phone Number</label>
-                <i class="fas fa-phone"></i>
-                <input type="number" id="phone_number" placeholder="Contact number here"  onkeyup="myFunction7()">             
-                <i class="fas fa-exclamation-circle failure-icon"></i>
-                <i class="far fa-check-circle success-icon"></i>             
-                <div class="error"></div>
-            </div>
-
-            <div>
-                <label for="gender" class="gender">Gender:</label>
-                <div class="style" >
-                    <input type="radio" id="male" name="gender" value="male" class="radio" onkeypress="myFunction8()"> Male </input>
-                    <input type="radio" id="female" name="gender" value="female" class="radio" onkeypress="myFunction8()"> Female </input>
-                    <input type="radio" id="other" name="gender" value="other" class="radio" onkeypress="myFunction8()"> Other </input>
+        <div class="form-container">
+            <form id="form" method="get" action="#">
+                <h2 class="title">Registration Form</h2>
+                <div>
+                    <!-- <label for="username">User Name</label> -->
+                    <i class="fas fa-user identity" ></i>            
+                    <input
+                        type="text"
+                        name="username"
+                        id="username"
+                        class="name"
+                        placeholder=" Full Name "
+                        onkeyup="myFunction()"
+                    />            
                     <i class="fas fa-exclamation-circle failure-icon"></i>
-                    <i class="far fa-check-circle success-icon"></i>                  
+                    <i class="far fa-check-circle success-icon"></i>
+                    <div class="error"></div>
                 </div>
-                <div class="error"></div>
-            </div>
 
-            <div>
-                <label for="country">Country:</label>
-                <i class="fas fa-globe"></i>
-                <select id="country" name="country" >
-                    <option disabled selected value="" id="no-select" >Select an option</option>
-                    <option value="us" class="optionD" id="option1" onkeypress="myFunction9()">United States</option>
-                    <option value="ca" class="optionD" id="option2" onkeypress="myFunction99()">Canada</option>
-                    <option value="uk" class="optionD" id="option3" onkeypress="myFunction9()">United Kingdom</option>
-                    <option value="in" class="optionD" id="option4" onkeypress="myFunction9()">India</option> 
-                </select>
-                <i class="fas fa-exclamation-circle failure-icon"></i>
-                <i class="far fa-check-circle success-icon"></i>             
-                <div class="error"></div>
-            </div>
-            <button id="btn" class="btn btn-secondary" type="submit">Submit</button>
-        </form>
-    </div>
+                <div>
+                    <!-- <label for="email">Email</label> -->
+                    <i class="far fa-envelope identity"></i>            
+                    <input
+                        type="email"
+                        name="email"
+                        id="email"
+                        placeholder="abc@gmail.com"
+                        onkeyup="myFunction2()"
+                    />             
+                    <i class="fas fa-exclamation-circle failure-icon"></i>
+                    <i class="far fa-check-circle success-icon"></i>              
+                    <div class="error"></div>
+                </div>
+
+                <div>
+                    <!-- <label for="password">Password</label> -->
+                    <i class="fas fa-lock identity"></i>              
+                    <input
+                        type="password"
+                        name="password"
+                        id="password"
+                        placeholder="Password here"
+                        onkeyup="myFunction3()"
+                    />            
+                    <i class="fas fa-exclamation-circle failure-icon"></i>
+                    <i class="far fa-check-circle success-icon"></i>            
+                    <div class="error"></div>
+                </div>
+
+                <div>
+                    <!-- <label for="confirm_password">Confirm Password</label> -->
+                    <i class="fas fa-lock identity"></i>
+                    <input type="password"
+                            name="confirm_password"
+                            id="confirm_password"
+                            placeholder="Confirm password"
+                            onkeyup="myFunction4()"
+                    />
+                    <i class="fas fa-exclamation-circle failure-icon"></i>
+                    <i class="far fa-check-circle success-icon"></i>               
+                    <div class="error"></div>
+                </div>
+
+                <div>
+                    <!-- <label for="address">Address</label> -->
+                    <i class="fas fa-address-card identity"></i>
+                    <textarea name="address" id="address" cols="40" rows="2" placeholder="House Address" onkeyup="myFunction5()"></textarea>
+                    <i class="fas fa-exclamation-circle failure-icon text"></i>
+                    <i class="far fa-check-circle success-icon text"></i>               
+                    <div class="error"></div>
+                </div>
+
+                <div>
+                    <!-- <label for="phone_number">Phone Number</label> -->
+                    <i class="fas fa-phone identity"></i>
+                    <input type="number" id="phone_number" placeholder="Contact number here"  onkeyup="myFunction7()">             
+                    <i class="fas fa-exclamation-circle failure-icon"></i>
+                    <i class="far fa-check-circle success-icon"></i>             
+                    <div class="error"></div>
+                </div>
+
+                <div class="style-out">
+                    <!-- <label for="gender" class="gender">Gender:</label> -->
+                    <div class="style" >
+                        <input type="radio" id="male" name="gender" value="male" class="radio" onchange="myFunction8()"> Male </input>
+                        <input type="radio" id="female" name="gender" value="female" class="radio" onchange="myFunction8()"> Female </input>
+                        <input type="radio" id="other" name="gender" value="other" class="radio" onchange="myFunction8()"> Other </input>
+                    
+                        <i class="fas fa-exclamation-circle failure-icon rad-f"></i>
+                        <i class="far fa-check-circle success-icon rad-i"></i>  
+                    </div>                
+                    <div class="error"></div>
+                </div>
+
+                <div class="cntry">
+                    <!-- <label for="country">Country:</label> -->
+                    <i class="fas fa-globe identity"></i>
+                    <select id="country" name="country" onchange="isCountry(this, 7)">
+                        <option disabled selected value="" id="no-select" >Select an option</option>
+                        <option value="us" class="optionD" id="option1" >United States</option>
+                        <option value="ca" class="optionD" id="option2" >Canada</option>
+                        <option value="uk" class="optionD" id="option3" >United Kingdom</option>
+                        <option value="in" class="optionD" id="option4" >India</option>               
+                    </select> 
+                    <i class="fas fa-exclamation-circle failure-icon"></i>
+                    <i class="far fa-check-circle success-icon"></i>             
+                    <div class="error country-error"></div>
+                    <div class="arrow"></div>
+                </div>
+
+                <div > 
+                    <!-- <label>Are you employed?</label>                -->
+                       <div class="style">
+                        <input  type="checkbox" id="checkbox" name="checkbox" onclick="myFunction6()" >
+                        <label for="checkbox" class="tick">I Accept the terms and conditions</label>            
+                        <i class="fas fa-exclamation-circle failure-icon select"></i>
+                        <i class="far fa-check-circle success-icon select"></i>
+                       </div>        
+                        <div class="error"></div>
+                </div>
+
+                <div>
+                    <button id="btn" class="btn btn-primary" type="submit">Register</button>
+                </div>
+                
+            </form>
+        </div>
         
-    <table class="table caption-top align-middle table-sm table-bordered table-hover mx-auto p-2" style="width: 500px;">
-        <caption>Summary Table</caption>
-        <thead class="table-dark">
-            <th scope="row"> Fields</th>
-            <td> Name</td>
-            <td> Email</td>
-            <td>Password</td>
-            <td>Contact-No</td>
-        </thead>
-        <tr class="tr">
-            <th scope="row">Input</th>
-            <td id="td1"></td>
-            <td id="td2"></td>
-            <td id="td3"></td>
-            <td id="td4"></td>
-        </tr>
-    </table> 
+        <table class="table caption-top align-middle table-sm table-bordered table-hover mx-auto p-2" style="width: 500px;">
+            <h2>Summary Table</h2>
+            <thead class="table-dark">
+                <!-- <th scope="row"> Fields</th> -->
+                <td> Name</td>
+                <td> Email</td>
+                <td>Password</td>
+                <td>Contact-No</td>
+            </thead>
+            <tr class="tr">
+                <!-- <th scope="row"></th> -->
+                <td id="td1"></td>
+                <td id="td2"></td>
+                <td id="td3"></td>
+                <td id="td4"></td>
+            </tr>
+        </table> 
+    </div>
+
+    <script src="/js/index.js"></script>
 </body>
-<script src="index.js"></script>
+
 </html>            

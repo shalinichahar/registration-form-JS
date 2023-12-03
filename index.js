@@ -43,6 +43,7 @@ function isPasswordSecure(pass) {
     return re.test(pass);
 };
 
+
 let engine = (id, classes, message) => {
     if(id.value === null || id.value ==='undefined'){
         console.log("data is null or undefined");
@@ -58,6 +59,22 @@ let engine = (id, classes, message) => {
         id.style.border = "2px solid green";
         failureIcon[classes].style.opacity = "0";
         successIcon[classes].style.opacity = "1";
+    }
+}
+
+function validateEmail(inputElement,classes,message){
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    var emailValue = inputElement.value.trim();
+    if (emailRegex.test(emailValue)) {
+        errorMsg[classes].innerHTML = "";
+        inputElement.style.border = "2px solid green";
+        failureIcon[classes].style.opacity = "0";
+        successIcon[classes].style.opacity = "1";
+    } else {
+        errorMsg[classes].innerHTML = "Please enter valid Email";
+        inputElement.style.border = "2px solid red";
+        failureIcon[classes].style.opacity = "1";
+        successIcon[classes].style.opacity = "0";
     }
 }
 
@@ -99,7 +116,6 @@ let checkConfirmPassword = (id1, id2, classes) => {
         failureIcon[classes].style.opacity = "1";
         successIcon[classes].style.opacity = "0";
     } else {
-        console.log("gvhxx");
         errorMsg[classes].innerText ="";
         id2.style.border = "2px solid green";
         failureIcon[classes].style.opacity = "0";
@@ -143,15 +159,17 @@ let isContact = (number,classes)=>{
 
 let isRadioButtonChecked = (x, classes) => {
     var selectedValue =document.querySelector('input[name="gender"]:checked');
-    if(selectedValue != null){
+      if(selectedValue == null){
+        errorMsg[classes].innerText = "Please select the gender";   
+        x.style = "2px solid red";
+        failureIcon[classes].style.opacity = "1";
+        successIcon[classes].style.opacity = "0";       
+    }
+    else if(selectedValue){
         errorMsg[classes].innerText = "";   
+        x.style = "2px solid green";
         failureIcon[classes].style.opacity = "0";
         successIcon[classes].style.opacity = "1";
-    }
-    else{
-        errorMsg[classes].innerText = "Select the gender";   
-        failureIcon[classes].style.opacity = "1";
-        successIcon[classes].style.opacity = "0";   
     }
 }
 
@@ -163,7 +181,7 @@ let isCountry = (select, classes) =>{
         successIcon[classes].style.opacity = "1";
     }
     else{
-        errorMsg[classes].innerText ="Please select an option";
+        errorMsg[classes].innerText ="Please select your country";
         select.style.border = "2px solid red";
         failureIcon[classes].style.opacity = "1";
         successIcon[classes].style.opacity = "0";
@@ -175,7 +193,7 @@ function myFunction(){
 }
     
 function myFunction2(){
-    engine(email, 1, "Email cannot be blank");
+    validateEmail(email, 1, "Email cannot be blank");
 }
 
 function myFunction3(){
@@ -190,32 +208,36 @@ function myFunction5(){
     engine(address,4,"Please enter your address");  
 }
 
-function myFunction6(){
-    checkbox(employD, 5,"Mark the field");
-}
+// function myFunction6(){
+//     checkbox(employD, 5,"Mark the field");
+// }
 
 function myFunction7(){
-    isContact(phone,6);
+    isContact(phone,5);
 }
 
 function myFunction8(){
-    isRadioButtonChecked(radioBtn,7); 
+    isRadioButtonChecked(radioBtn,6); 
 }
 
 function myFunction9(){
-    isCountry(select, 8);
+    isCountry(select, 7);
+}
+
+function myFunction6(){
+    checkbox(employD, 8,"Mark the field");
 }
 
 form.addEventListener("submit", (e) => {
     engine(username, 0, "Username cannot be blank");
-    engine(email, 1, "Email cannot be blank");
+    validateEmail(email, 1, "Email cannot be blank");
     isPassword(password,2,"Password doesn't match");
     checkConfirmPassword(password,confirmPassword,3);
     engine(address,4,"Please enter your address");
-    checkbox (employD, 5,"Mark the field");
-    isContact(phone,6);
-    isRadioButtonChecked(radioBtn,7);
-    isCountry(select, 8);
+    isContact(phone,5);
+    isRadioButtonChecked(radioBtn,6);
+    isCountry(select, 7);
+    checkbox (employD, 8,"Please agree to the terms and conditions.");
 });
 
 form.addEventListener("submit", showData);
