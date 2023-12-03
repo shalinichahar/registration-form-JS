@@ -3,7 +3,6 @@ body {
   background: fixed;
   background-color: #c4c4c4;
 }
-  
   .container{
     width: 100%;   
  
@@ -171,10 +170,4 @@ th{
 td{
   text-align: centre;
 }
-
-/* .tr{
-  height: 75px;
-  text-align: center;
-  margin-bottom: 35px;
-} */
 
